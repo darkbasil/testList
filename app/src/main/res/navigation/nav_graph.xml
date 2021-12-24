@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph" app:startDestination="@id/FirstFragment">
+    android:id="@+id/nav_graph" app:startDestination="@id/FrontFragment">
 
-    <fragment android:id="@+id/FirstFragment" android:name="com.example.testlist.FirstFragment"
-        android:label="@string/first_fragment_label" tools:layout="@layout/fragment_first">
+    <fragment android:id="@+id/FrontFragment" android:name="com.example.testlist.front.FrontFragment"
+        android:label="@string/first_fragment_label" tools:layout="@layout/fragment_front">
 
-        <action android:id="@+id/action_FirstFragment_to_SecondFragment" app:destination="@id/SecondFragment" />
+        <action android:id="@+id/actionFrontFragment_to_BackFragment" app:destination="@id/BackFragment" />
     </fragment>
-    <fragment android:id="@+id/SecondFragment" android:name="com.example.testlist.SecondFragment"
-        android:label="@string/second_fragment_label" tools:layout="@layout/fragment_second">
+    <fragment android:id="@+id/BackFragment" android:name="com.example.testlist.BackFragment"
+        android:label="@string/second_fragment_label" tools:layout="@layout/fragment_back">
 
-        <action android:id="@+id/action_SecondFragment_to_FirstFragment" app:destination="@id/FirstFragment" />
+        <action android:id="@+id/action_BackFragment_to_FrontFragment" app:destination="@id/FrontFragment" />
     </fragment>
 </navigation>
