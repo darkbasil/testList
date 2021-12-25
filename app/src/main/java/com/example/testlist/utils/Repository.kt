@@ -21,8 +21,8 @@ class Repository: ViewModel() {
 
         var list: List<Item> = listOf()
         for(line in csvString) {
-            val l = line.split(", ")
-            val item = Item(l[0], l[1], l[2])
+            val l = line.split(", ").map{ it.trim('"') }
+            val item = Item(l[0], l[1].toFloat(), l[2].toInt())
             list = list.plus(item)
         }
         _items.value = list

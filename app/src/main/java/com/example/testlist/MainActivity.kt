@@ -20,12 +20,5 @@ class MainActivity : AppCompatActivity() {
 
         repository = ViewModelProvider(this).get(Repository::class.java)
         repository.fillItems(this.applicationContext)
-
-//        repository.items.observe(this) {
-//            for (i in it) {
-//                Log.e("111", "${i.name} - ${i.cost} - ${i.amount}")
-//            }
-//        }
-
     }
 }

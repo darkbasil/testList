@@ -10,6 +10,6 @@ class ItemAdapter(fragment: FrontFragment, private val items: List<Item>) : Frag
     }
 
     override fun createFragment(position: Int): Fragment {
-        return ItemFragment.newInstance(items[position].name, items[position].cost, items[position].amount)
+        return ItemFragment.newInstance(items[position].name, items[position].price, items[position].amount)
     }
 }
