@@ -8,15 +8,10 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.testlist.databinding.FragmentBackBinding
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
 class BackFragment : Fragment() {
 
     private var _binding: FragmentBackBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
