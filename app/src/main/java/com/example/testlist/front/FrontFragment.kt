@@ -5,10 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.testlist.R
 import com.example.testlist.databinding.FragmentFrontBinding
+import com.example.testlist.utils.Repository
 
 class FrontFragment : Fragment() {
 
@@ -34,9 +36,14 @@ class FrontFragment : Fragment() {
             findNavController().navigate(R.id.actionFrontFragment_to_BackFragment)
         }
 
-        adapter = ItemAdapter(this)
-        viewPager = binding.pager
-        viewPager.adapter = adapter
+        val repository = this.activityViewModels<Repository>().value
+
+        repository.items.observe(viewLifecycleOwner) {
+            adapter = ItemAdapter(this, it)
+            viewPager = binding.pager
+            viewPager.adapter = adapter
+        }
+
     }
 
     override fun onDestroyView() {

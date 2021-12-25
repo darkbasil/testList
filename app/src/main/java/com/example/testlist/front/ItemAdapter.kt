@@ -2,13 +2,14 @@ package com.example.testlist.front
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.testlist.utils.Item
 
-class ItemAdapter(fragment: FrontFragment) : FragmentStateAdapter(fragment) {
+class ItemAdapter(fragment: FrontFragment, private val items: List<Item>) : FragmentStateAdapter(fragment) {
     override fun getItemCount(): Int {
-        return 2
+        return items.size
     }
 
     override fun createFragment(position: Int): Fragment {
-        return ItemFragment.newInstance("1", "2")
+        return ItemFragment.newInstance(items[position].name, items[position].cost, items[position].amount)
     }
 }
