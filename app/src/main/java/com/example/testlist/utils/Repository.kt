@@ -1,7 +1,6 @@
 package com.example.testlist.utils
 
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -19,11 +18,11 @@ class Repository: ViewModel() {
                 it.readLines()
             }
 
-        var list: List<Item> = listOf()
+        val list: MutableList<Item> = mutableListOf()
         for(line in csvString) {
-            val l = line.split(", ").map{ it.trim('"') }
-            val item = Item(l[0], l[1].toFloat(), l[2].toInt())
-            list = list.plus(item)
+            val lineArray = line.trim('"').split("\", \"")
+            val item = Item(lineArray[0], lineArray[1].toFloat(), lineArray[2].toInt())
+            list.add(item)
         }
         _items.value = list
     }
