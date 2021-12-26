@@ -5,6 +5,32 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <include layout="@layout/content_main" />
+    <include layout="@layout/content_main" android:id="@+id/container"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom">
+
+        <ToggleButton
+            android:id="@+id/buttonToFront"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight=".5"
+            android:checked="true"
+            android:textAllCaps="false"
+            android:textOff="@string/front"
+            android:textOn="@string/front" />
+
+        <ToggleButton
+            android:id="@+id/buttonToBack"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight=".5"
+            android:textAllCaps="false"
+            android:textOff="@string/back"
+            android:textOn="@string/back" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

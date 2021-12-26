@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.testlist.R
 import com.example.testlist.databinding.FragmentItemBinding
+import com.google.android.material.snackbar.Snackbar
 
 private const val ARG_NAME = "name"
 private const val ARG_PRICE = "price"
@@ -39,8 +41,14 @@ class ItemFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.itemName.text = name
-        binding.itemPrice.text = price.toString()
-        binding.itemAmount.text = amount.toString()
+        binding.itemPrice.text = getString(R.string.currency, price.toString())
+        binding.itemAmount.text = getString(R.string.num, amount.toString())
+
+        binding.buttonBuy.setOnClickListener {
+//            TODO getCurrentItem -> item.amount-- ? know position???
+            Snackbar.make(it, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
+        }
     }
 
     override fun onDestroyView() {

@@ -7,5 +7,12 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="submit">Сохранить</string>
+    <string name="submit">Купить</string>
+    <string name="front">Store-Front</string>
+    <string name="back">Back-End</string>
+    <string name="price_label">Цена</string>
+    <string name="amount_label">Количество</string>
+
+    <string name="currency">%1$s руб.</string>
+    <string name="num">%1$s шт.</string>
 </resources>

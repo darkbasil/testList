@@ -32,10 +32,6 @@ class FrontFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.actionFrontFragment_to_BackFragment)
-        }
-
         val repository = this.activityViewModels<Repository>().value
 
         repository.items.observe(viewLifecycleOwner) {
