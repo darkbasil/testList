@@ -16,7 +16,7 @@
         <ToggleButton
             android:id="@+id/buttonToFront"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:layout_weight=".5"
             android:checked="true"
             android:textAllCaps="false"
@@ -26,7 +26,7 @@
         <ToggleButton
             android:id="@+id/buttonToBack"
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:layout_weight=".5"
             android:textAllCaps="false"
             android:textOff="@string/back"
