@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        repository = ViewModelProvider(this).get(Repository::class.java)
+        repository = ViewModelProvider(this)[Repository::class.java]
         repository.fillItems(this.applicationContext)
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment

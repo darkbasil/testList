@@ -1,6 +1,7 @@
 package com.example.testlist.utils
 
 import android.content.Context
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -25,5 +26,18 @@ class Repository: ViewModel() {
             list.add(item)
         }
         _items.value = list
+    }
+
+    private val _position = MutableLiveData<Int>().apply {
+        value = 0
+    }
+    val position: LiveData<Int> = _position
+
+    fun subAmount(pos: Int) {
+        val newItems = items.value
+        _position.value = pos
+//        _items.value?.get(pos)?.amount = _items.value?.get(pos)?.amount?.minus(1)!!
+        newItems?.get(pos)?.amount = newItems?.get(pos)?.amount?.minus(1)!!
+        _items.value = newItems
     }
 }
